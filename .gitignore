@@ -3,3 +3,7 @@ hybrid_rs/data/sparse_ratings.npz
 .idea
 __pycache__
 venv
+.vscode
+.pytest_cache
+static_root
+.ipynb_checkpoints

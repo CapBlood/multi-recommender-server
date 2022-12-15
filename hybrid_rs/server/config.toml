@@ -1,0 +1,10 @@
+[Server]
+address = '127.0.0.1'
+port = 8080
+pagination = 20
+debug = true
+
+[MongoDB]
+db = "test"
+address = '127.0.0.1'
+port = 27017

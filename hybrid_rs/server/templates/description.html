@@ -1,0 +1,23 @@
+<!doctype html>
+<link rel="stylesheet" href="/static/styles/description.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+<div class="wrapper">
+    <h1 class="title">
+        {{ name }}
+    </h1>
+    
+    <div class="description">
+        {{ content }}
+    </div>
+    
+    <div class="recommend-content">
+        <h2 class="recommend-title">Рекомендации</h2>
+        <ul class="recommend-list">
+            {% for id, rec_name in recommendations %}
+                <li><a href="{{ id }}">{{ rec_name }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
