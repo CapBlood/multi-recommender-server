@@ -6,9 +6,9 @@ from hybrid_rs.server.config import config
 
 
 connect(
-    db=config["MongoDB"]['db'],
-    host=config['MongoDB']['address'],
-    port=config['MongoDB']['port']
+    db=config['DB'],
+    host=config['DB_ADDRESS'],
+    port=config['DB_PORT']
 )
 
 class Anime(Document):

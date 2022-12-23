@@ -18,7 +18,7 @@ def anime_search(request) -> HttpResponse:
     if search_param is not None:
         animes: List[Anime] = Anime.objects(name__istartswith=search_param)
         animes = Paginator(
-            animes, config['Server']['pagination'])
+            animes, config['SERVER_PAGINATION'])
         
         page_number = request.GET.get('page')
         animes = animes.get_page(page_number)

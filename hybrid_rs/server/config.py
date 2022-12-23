@@ -20,12 +20,32 @@ class Config:
     def __getitem__(self, key: str) -> Union[str, list, int, float]:
         return self.__config.__getitem__(key)
 
-    def __setitem__(self, key: str, value: Union[str, list, int, float]) -> None:
-        return self.__config.__setitem__(key, value)
+
+class EnvConfig(Config):
+    def __init__(self) -> None:
+        super().__init__()
+        
+    def __getitem__(self, key: str) -> Union[str, list, int, float]:
+        if key not in os.environ:
+            return super().__getitem__(key)
+
+        return self.cast(os.environ[key])
+
+    @staticmethod
+    def cast(value: str) -> Union[int, bool, str]:
+        if value == 'true':
+            return True
+        elif value == 'false':
+            return False
+        elif value.isdigit():
+            return int(value)
+        else:
+            return value
 
 
-config = Config()
+config = EnvConfig()
 
 
 if __name__ == "__main__":    
-    print(config["MongoDB"]["port"])
+    print(config["DB_ADDRESS"])
+    print(type(config["DB_ADDRESS"]))

@@ -21,7 +21,7 @@ ROOT_URLCONF: str = 'hybrid_rs.server.url_setup'
 
 def setup() -> None:
     settings.configure(
-        DEBUG=config['Server']['debug'],
+        DEBUG=config['DEBUG'],
         # Disable host header validation
         ALLOWED_HOSTS=["*"],
         # Make this module the urlconf

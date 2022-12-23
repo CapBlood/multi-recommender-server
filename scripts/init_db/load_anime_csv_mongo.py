@@ -38,3 +38,7 @@ def load_anime_csv_to_orm(path: str) -> List[Anime]:
 if __name__ == "__main__":
     Anime.drop_collection()
     load_anime_csv_to_orm("notes/anime_with_recommendations.csv")
+    
+    animes: List[Anime] = Anime.objects()[:10]
+    for anime in animes:
+        print(anime.name)

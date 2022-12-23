@@ -1,6 +1,25 @@
-version: '2'
+version: "2"
 services:
+    db:
+        image: mongo
+        restart: always
+    init-db:
+        build:
+            context: .
+            dockerfile: Dockerfile.init
+        depends_on:
+            db:
+                condition: service_started
+        environment:
+            - DB_ADDRESS=db
     web:
-        build: .
+        build:
+            context: .
+            dockerfile: Dockerfile.server
+        restart: always
         ports:
             - "8080:8080"
+        depends_on:
+            - db
+        environment:
+            - DB_ADDRESS=db

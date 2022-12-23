@@ -21,40 +21,6 @@ python-versions = ">=3.6"
 tzdata = ["tzdata"]
 
 [[package]]
-name = "beautifulsoup4"
-version = "4.10.0"
-description = "Screen-scraping library"
-category = "main"
-optional = false
-python-versions = ">3.0.0"
-
-[package.dependencies]
-soupsieve = ">1.2"
-
-[package.extras]
-html5lib = ["html5lib"]
-lxml = ["lxml"]
-
-[[package]]
-name = "certifi"
-version = "2021.10.8"
-description = "Python package for providing Mozilla's CA Bundle."
-category = "main"
-optional = false
-python-versions = "*"
-
-[[package]]
-name = "charset-normalizer"
-version = "2.0.8"
-description = "The Real First Universal Charset Detector. Open, modern and actively maintained alternative to Chardet."
-category = "main"
-optional = false
-python-versions = ">=3.5.0"
-
-[package.extras]
-unicode_backport = ["unicodedata2"]
-
-[[package]]
 name = "click"
 version = "8.1.3"
 description = "Composable command line interface toolkit"
@@ -108,47 +74,12 @@ trio = ["trio (>=0.14,<0.20)"]
 wmi = ["wmi (>=1.5.1,<2.0.0)"]
 
 [[package]]
-name = "filelock"
-version = "3.4.0"
-description = "A platform independent file lock."
-category = "main"
-optional = false
-python-versions = ">=3.6"
-
-[package.extras]
-docs = ["furo (>=2021.8.17b43)", "sphinx (>=4.1)", "sphinx-autodoc-typehints (>=1.12)"]
-testing = ["covdefaults (>=1.2.0)", "coverage (>=4)", "pytest (>=4)", "pytest-cov", "pytest-timeout (>=1.4.2)"]
-
-[[package]]
-name = "gdown"
-version = "4.2.0"
-description = "Google Drive direct download of big files."
-category = "main"
-optional = false
-python-versions = "*"
-
-[package.dependencies]
-beautifulsoup4 = "*"
-filelock = "*"
-requests = {version = "*", extras = ["socks"]}
-six = "*"
-tqdm = "*"
-
-[[package]]
 name = "h11"
 version = "0.14.0"
 description = "A pure-Python, bring-your-own-I/O implementation of HTTP/1.1"
 category = "main"
 optional = false
 python-versions = ">=3.7"
-
-[[package]]
-name = "idna"
-version = "3.3"
-description = "Internationalized Domain Names in Applications (IDNA)"
-category = "main"
-optional = false
-python-versions = ">=3.5"
 
 [[package]]
 name = "loguru"
@@ -185,26 +116,6 @@ optional = false
 python-versions = ">=3.7,<3.11"
 
 [[package]]
-name = "pandas"
-version = "1.3.4"
-description = "Powerful data structures for data analysis, time series, and statistics"
-category = "main"
-optional = false
-python-versions = ">=3.7.1"
-
-[package.dependencies]
-numpy = [
-    {version = ">=1.17.3", markers = "platform_machine != \"aarch64\" and platform_machine != \"arm64\" and python_version < \"3.10\""},
-    {version = ">=1.19.2", markers = "platform_machine == \"aarch64\" and python_version < \"3.10\""},
-    {version = ">=1.20.0", markers = "platform_machine == \"arm64\" and python_version < \"3.10\""},
-]
-python-dateutil = ">=2.7.3"
-pytz = ">=2017.3"
-
-[package.extras]
-test = ["hypothesis (>=3.58)", "pytest (>=6.0)", "pytest-xdist"]
-
-[[package]]
 name = "pymongo"
 version = "4.3.3"
 description = "Python driver for MongoDB <http://www.mongodb.org>"
@@ -224,52 +135,6 @@ snappy = ["python-snappy"]
 zstd = ["zstandard"]
 
 [[package]]
-name = "pysocks"
-version = "1.7.1"
-description = "A Python SOCKS client module. See https://github.com/Anorov/PySocks for more information."
-category = "main"
-optional = false
-python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
-
-[[package]]
-name = "python-dateutil"
-version = "2.8.2"
-description = "Extensions to the standard Python datetime module"
-category = "main"
-optional = false
-python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,>=2.7"
-
-[package.dependencies]
-six = ">=1.5"
-
-[[package]]
-name = "pytz"
-version = "2021.3"
-description = "World timezone definitions, modern and historical"
-category = "main"
-optional = false
-python-versions = "*"
-
-[[package]]
-name = "requests"
-version = "2.28.1"
-description = "Python HTTP for Humans."
-category = "main"
-optional = false
-python-versions = ">=3.7, <4"
-
-[package.dependencies]
-certifi = ">=2017.4.17"
-charset-normalizer = ">=2,<3"
-idna = ">=2.5,<4"
-PySocks = {version = ">=1.5.6,<1.5.7 || >1.5.7", optional = true, markers = "extra == \"socks\""}
-urllib3 = ">=1.21.1,<1.27"
-
-[package.extras]
-socks = ["PySocks (>=1.5.6,!=1.5.7)"]
-use_chardet_on_py3 = ["chardet (>=3.0.2,<6)"]
-
-[[package]]
 name = "scipy"
 version = "1.7.3"
 description = "SciPy: Scientific Library for Python"
@@ -279,22 +144,6 @@ python-versions = ">=3.7,<3.11"
 
 [package.dependencies]
 numpy = ">=1.16.5,<1.23.0"
-
-[[package]]
-name = "six"
-version = "1.16.0"
-description = "Python 2 and 3 compatibility utilities"
-category = "main"
-optional = false
-python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*"
-
-[[package]]
-name = "soupsieve"
-version = "2.3.1"
-description = "A modern CSS selector implementation for Beautiful Soup."
-category = "main"
-optional = false
-python-versions = ">=3.6"
 
 [[package]]
 name = "sqlparse"
@@ -313,41 +162,12 @@ optional = false
 python-versions = ">=2.6, !=3.0.*, !=3.1.*, !=3.2.*"
 
 [[package]]
-name = "tqdm"
-version = "4.62.3"
-description = "Fast, Extensible Progress Meter"
-category = "main"
-optional = false
-python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,>=2.7"
-
-[package.dependencies]
-colorama = {version = "*", markers = "platform_system == \"Windows\""}
-
-[package.extras]
-dev = ["py-make (>=0.1.0)", "twine", "wheel"]
-notebook = ["ipywidgets (>=6)"]
-telegram = ["requests"]
-
-[[package]]
 name = "tzdata"
 version = "2022.7"
 description = "Provider of IANA time zone data"
 category = "main"
 optional = false
 python-versions = ">=2"
-
-[[package]]
-name = "urllib3"
-version = "1.26.7"
-description = "HTTP library with thread-safe connection pooling, file post, and more."
-category = "main"
-optional = false
-python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, <4"
-
-[package.extras]
-brotli = ["brotlipy (>=0.6.0)"]
-secure = ["pyOpenSSL (>=0.14)", "cryptography (>=1.3.4)", "idna (>=2.0.0)", "certifi", "ipaddress"]
-socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 
 [[package]]
 name = "uvicorn"
@@ -378,37 +198,20 @@ dev = ["pytest (>=4.6.2)", "black (>=19.3b0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.8,<=3.9"
-content-hash = "7730518d35dacc80ce9edf11425cb1e847bc9c0da0050bcf20042c0444a4d7f1"
+content-hash = "380d4aecf05d55f19bf22cf0611f9e67bd916a2126508374c29a6d3fad63029b"
 
 [metadata.files]
 asgiref = []
 "backports.zoneinfo" = []
-beautifulsoup4 = []
-certifi = []
-charset-normalizer = []
 click = []
 colorama = []
 django = []
 dnspython = []
-filelock = []
-gdown = []
 h11 = []
-idna = [
-    {file = "idna-3.3-py3-none-any.whl", hash = "sha256:84d9dd047ffa80596e0f246e2eab0b391788b0503584e8945f2368256d2735ff"},
-    {file = "idna-3.3.tar.gz", hash = "sha256:9d643ff0a55b762d5cdb124b8eaa99c66322e2157b69160bc32796e824360e6d"},
-]
 loguru = []
 mongoengine = []
 numpy = []
-pandas = []
 pymongo = []
-pysocks = []
-python-dateutil = []
-pytz = []
-requests = [
-    {file = "requests-2.28.1-py3-none-any.whl", hash = "sha256:8fefa2a1a1365bf5520aac41836fbee479da67864514bdb821f31ce07ce65349"},
-    {file = "requests-2.28.1.tar.gz", hash = "sha256:7c5599b102feddaa661c826c56ab4fee28bfd17f5abca1ebbe3e7f19d7c97983"},
-]
 scipy = [
     {file = "scipy-1.7.3-1-cp310-cp310-macosx_12_0_arm64.whl", hash = "sha256:c9e04d7e9b03a8a6ac2045f7c5ef741be86727d8f49c45db45f244bdd2bcff17"},
     {file = "scipy-1.7.3-1-cp38-cp38-macosx_12_0_arm64.whl", hash = "sha256:b0e0aeb061a1d7dcd2ed59ea57ee56c9b23dd60100825f98238c06ee5cc4467e"},
@@ -440,15 +243,8 @@ scipy = [
     {file = "scipy-1.7.3-cp39-cp39-win_amd64.whl", hash = "sha256:3f78181a153fa21c018d346f595edd648344751d7f03ab94b398be2ad083ed3e"},
     {file = "scipy-1.7.3.tar.gz", hash = "sha256:ab5875facfdef77e0a47d5fd39ea178b58e60e454a4c85aa1e52fcb80db7babf"},
 ]
-six = [
-    {file = "six-1.16.0-py2.py3-none-any.whl", hash = "sha256:8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254"},
-    {file = "six-1.16.0.tar.gz", hash = "sha256:1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"},
-]
-soupsieve = []
 sqlparse = []
 toml = []
-tqdm = []
 tzdata = []
-urllib3 = []
 uvicorn = []
 win32-setctime = []

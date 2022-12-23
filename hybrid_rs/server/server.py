@@ -17,8 +17,8 @@ def get_server_app() -> ASGIHandler:
 async def main() -> None:
     app = get_server_app()
     uvicorn_config = uvicorn.Config(
-        app, host=config['Server']['address'],
-        port=config['Server']['port'], log_level="info")
+        app, host=config['SERVER_ADDRESS'],
+        port=config['SERVER_PORT'], log_level="info")
     server = uvicorn.Server(uvicorn_config)
     await server.serve()
 
