@@ -20,7 +20,8 @@ RUN mkdir -p /data/db
 # Установка Nginx
 RUN apt install -y nginx
 
-RUN apt install -y vim
+# Установка вспомогательного ПО
+RUN apt install -y vim git
 
 # Установка сервера
 ADD . /app

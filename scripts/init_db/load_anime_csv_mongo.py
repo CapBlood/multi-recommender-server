@@ -1,6 +1,8 @@
-from typing import List
+import io
+from typing import List, Union
 
 import pandas as pd
+import dvc.api
 
 from hybrid_rs.server.orm.anime_orm import Anime
 
@@ -9,8 +11,8 @@ def process_recommendations(recommendations: str) -> List[int]:
     return recommendations.replace("[", '').replace(']', '').split(',')
 
 
-def load_anime_csv_to_orm(path: str) -> List[Anime]:
-    df: pd.DataFrame = pd.read_csv(path)
+def load_anime_csv_to_orm(path_or_buffer: Union[str, io.TextIOWrapper]) -> List[Anime]:
+    df: pd.DataFrame = pd.read_csv(path_or_buffer)
     for _, row in df.iterrows():
         fields = dict()
         # mongoengine doesn't know np.nan
@@ -37,7 +39,10 @@ def load_anime_csv_to_orm(path: str) -> List[Anime]:
 
 if __name__ == "__main__":
     Anime.drop_collection()
-    load_anime_csv_to_orm("notes/anime_with_recommendations.csv")
+    with dvc.api.open(
+        "notes/anime_with_recommendations.csv"
+    ) as f:
+        load_anime_csv_to_orm(f)
     
     animes: List[Anime] = Anime.objects()[:10]
     for anime in animes:
