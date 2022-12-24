@@ -2,7 +2,6 @@ import io
 from typing import List, Union
 
 import pandas as pd
-import dvc.api
 
 from hybrid_rs.server.orm.anime_orm import Anime
 
@@ -39,7 +38,7 @@ def load_anime_csv_to_orm(path_or_buffer: Union[str, io.TextIOWrapper]) -> List[
 
 if __name__ == "__main__":
     Anime.drop_collection()
-    with dvc.api.open(
+    with open(
         "notes/anime_with_recommendations.csv"
     ) as f:
         load_anime_csv_to_orm(f)
