@@ -1,0 +1,5 @@
+stages:
+  prepare:
+    cmd: poetry run python3 scripts/init_db/load_anime_csv_mongo.py
+    deps:
+    - notes/anime_with_recommendations.csv
