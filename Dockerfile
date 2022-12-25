@@ -1,6 +1,8 @@
 FROM ubuntu:20.04
 WORKDIR /app
 
+ENV PORT 8099
+
 # Установка Python и Poetry
 RUN apt update
 RUN apt install -y software-properties-common gnupg wget
@@ -30,5 +32,5 @@ RUN ["/bin/sh", "/app/scripts/init_db.sh"]
 
 # Set /usr/bin/mongod as the dockerized entry-point application
 ENTRYPOINT ["/bin/sh", "/app/scripts/docker_entry_script.sh"]
-EXPOSE 80
+EXPOSE $PORT
 CMD ["poetry", "run", "run-server"]
