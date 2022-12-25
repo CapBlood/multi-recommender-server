@@ -843,6 +843,20 @@ pyparsing = "*"
 full = ["numpy", "ply"]
 
 [[package]]
+name = "gunicorn"
+version = "20.1.0"
+description = "WSGI HTTP Server for UNIX"
+category = "main"
+optional = false
+python-versions = ">=3.5"
+
+[package.extras]
+eventlet = ["eventlet (>=0.24.1)"]
+gevent = ["gevent (>=1.4.0)"]
+setproctitle = ["setproctitle"]
+tornado = ["tornado (>=0.2)"]
+
+[[package]]
 name = "h11"
 version = "0.14.0"
 description = "A pure-Python, bring-your-own-I/O implementation of HTTP/1.1"
@@ -1535,6 +1549,17 @@ optional = false
 python-versions = "*"
 
 [[package]]
+name = "whitenoise"
+version = "6.2.0"
+description = "Radically simplified static file serving for WSGI applications"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.extras]
+brotli = ["brotli"]
+
+[[package]]
 name = "win32-setctime"
 version = "1.1.0"
 description = "A small Python utility to set file creation time on Windows"
@@ -1583,7 +1608,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "flake8 (<5)", "pytest-co
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.8,<=3.9"
-content-hash = "4b026aedfb6ed877042ebe3b99c932fa11db53e2a8004ed523c86dd3f63a5a9b"
+content-hash = "4cc32ec870607e5ba99810333133af1c0475631bb9a02dc019dabb200ef128b3"
 
 [metadata.files]
 aiohttp = []
@@ -1642,6 +1667,7 @@ google-auth = []
 google-auth-httplib2 = []
 googleapis-common-protos = []
 grandalf = []
+gunicorn = []
 h11 = []
 httplib2 = []
 hydra-core = []
@@ -1708,6 +1734,7 @@ uvicorn = []
 vine = []
 voluptuous = []
 wcwidth = []
+whitenoise = []
 win32-setctime = []
 yarl = []
 "zc.lockfile" = []

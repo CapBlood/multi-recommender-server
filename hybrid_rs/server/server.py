@@ -1,31 +1,26 @@
-import asyncio
+import subprocess
 
-import uvicorn
-from django.core.handlers.asgi import ASGIHandler
-from django.core.asgi import get_asgi_application
+from django.core.handlers.wsgi import WSGIHandler
+from django.core.wsgi import get_wsgi_application
+from whitenoise import WhiteNoise
 
 from hybrid_rs.server.django_setup import setup
-from hybrid_rs.server.config import config
 
 
-def get_server_app() -> ASGIHandler:
+def get_server_app() -> WSGIHandler:
     setup()
-    application = get_asgi_application()
+    application = get_wsgi_application()
+    application = WhiteNoise(
+        application,
+        root="hybrid_rs/server")
+    application.add_files("hybrid_rs/server", prefix="static/")
     return application
 
 
-async def main() -> None:
-    app = get_server_app()
-    uvicorn_config = uvicorn.Config(
-        app, host=config['SERVER_ADDRESS'],
-        port=config['SERVER_PORT'], log_level="info")
-    server = uvicorn.Server(uvicorn_config)
-    await server.serve()
-
-
-def run() -> None:
-    asyncio.run(main())
-
+def run_server():
+    subprocess.run(
+        ['gunicorn', '-c', 'hybrid_rs/server/gunicorn_config.py', 'hybrid_rs.server.server:get_server_app()'],
+    )
 
 def manager() -> None:
     import sys

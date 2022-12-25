@@ -16,6 +16,8 @@ uvicorn = "^0.20.0"
 pandas = "^1.5.2"
 dvc = "^2.38.1"
 dvc-gdrive = "^2.19.1"
+whitenoise = "^6.2.0"
+gunicorn = "^20.1.0"
 
 [tool.poetry.dev-dependencies]
 
@@ -24,5 +26,5 @@ requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
-run-server = "hybrid_rs.server.server:run"
+run-server = "hybrid_rs.server.server:run_server"
 django-manager = "hybrid_rs.server.server:manager"

@@ -17,9 +17,6 @@ RUN apt-get install -y mongodb-org
 
 RUN mkdir -p /data/db
 
-# Установка Nginx
-RUN apt install -y nginx
-
 # Установка вспомогательного ПО
 RUN apt install -y vim git
 
@@ -29,7 +26,6 @@ COPY poetry.lock pyproject.toml /app/
 RUN poetry install
 ENV PYTHONPATH "${PYTHONPATH}:/app"
 
-RUN ["/bin/sh", "/app/scripts/init_nginx.sh"]
 RUN ["/bin/sh", "/app/scripts/init_db.sh"]
 
 # Set /usr/bin/mongod as the dockerized entry-point application
