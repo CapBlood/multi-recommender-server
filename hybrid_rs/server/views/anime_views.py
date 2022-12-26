@@ -13,7 +13,7 @@ def index(request) -> HttpResponseRedirect:
 
 
 def anime_search(request) -> HttpResponse:
-    animes: List[Anime] = []
+    animes: List[Anime] = None
     search_param = request.GET.get('search', None)
     if search_param is not None:
         animes: List[Anime] = Anime.objects(name__istartswith=search_param)

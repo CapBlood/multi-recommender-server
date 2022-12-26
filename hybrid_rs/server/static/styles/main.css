@@ -8,6 +8,28 @@
   font-family: 'Poppins', sans-serif;
 }
 
+.search-input {
+  background-color: #FFF;
+  position: relative;
+}
+
+.search-button {
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  background-color: rgb(118, 32, 89);
+  border-radius: 50%;
+  border: 0;
+  color: #FFF;
+  width: 35px;
+  height: 35px;
+  outline: 0;
+}
+
+.search-button:hover {
+  background-color: rgb(146, 60, 117);
+}
+
 body {
   /* background: #644bff; */
   padding: 0 20px;
@@ -17,6 +39,8 @@ body {
   color: #fff;
   background: #664AFF;
 }
+
+
 
 .wrapper {
   width: 50%;
@@ -54,6 +78,8 @@ body {
   font-size: 18px;
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1); */
 }
+
+
 
 /* .search-input {
   position: absolute;
@@ -163,6 +189,7 @@ body {
 .autoComplete_wrapper>ul>li[aria-selected=true] {
   background-color: rgba(123, 123, 123, .1)
 }
+
 
 @media only screen and (max-width:600px) {
   .autoComplete_wrapper>input {

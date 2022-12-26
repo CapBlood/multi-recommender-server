@@ -4,6 +4,11 @@ $(document).ready(function ($) {
             window.open(`/anime?search=${document.getElementById('autoComplete').value}`, "_self")
         }
     });
+
+    $('#button').on('click', function(e){
+        window.open(`/anime?search=${document.getElementById('autoComplete').value}`, "_self")
+        }
+    )
 });
 
 const autoCompleteJS = new autoComplete({
