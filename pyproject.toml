@@ -25,4 +25,5 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
 server = "hybrid_rs.server.server:run_server"
+debug = "hybrid_rs.server.server:run_debug"
 django-manager = "hybrid_rs.server.server:manager"
